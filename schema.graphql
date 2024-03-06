@@ -9,6 +9,7 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 scalar JSON
 
 type Movie implements Node {
+  Poster: String
   Title: String
   Type: String
   Year: String
@@ -27,6 +28,12 @@ interface Node {
 type Query {
   _version: String!
   movie(id: ID!): Movie
+  movies: QueryMoviesList
   node(id: ID!): Node
   nodes(ids: [ID!]!): [Node]!
+}
+
+type QueryMoviesList {
+  nodes: [Movie]!
+  totalCount: Int
 }
