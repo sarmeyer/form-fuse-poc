@@ -4,9 +4,9 @@ import { MovieCard, MovieFields } from "@/components/MovieCard"
 import { graphql } from "@/fuse"
 import { execute } from "@/fuse/server"
 
-export const MovieQuery = graphql(
+export const FaveMovieQuery = graphql(
   `
-    query Movies {
+    query {
       movies {
         nodes {
           ...MovieCard_MovieFields
@@ -18,8 +18,8 @@ export const MovieQuery = graphql(
 )
 
 export default async function Home() {
-  const result = await execute({
-    query: MovieQuery,
+  const { data } = await execute({
+    query: FaveMovieQuery,
     variables: {},
   })
 
@@ -33,8 +33,8 @@ export default async function Home() {
       />
       <p className="text-md mb-6">Some of my faves...</p>
       <div className="grid grid-cols-3 gap-4">
-        {result.data?.movies.nodes.map(movie => {
-          return <MovieCard movie={movie} />
+        {data?.movies?.nodes.map(movie => {
+          return <MovieCard key={movie.id} movie={movie} />
         })}
       </div>
     </main>

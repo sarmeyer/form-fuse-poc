@@ -42,6 +42,128 @@ const introspection = {
       },
       {
         "kind": "OBJECT",
+        "name": "Movie",
+        "fields": [
+          {
+            "name": "Awards",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "Director",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "Genre",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "Plot",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "Poster",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "Released",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "Title",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "Type",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "Year",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "id",
+            "type": {
+              "kind": "NON_NULL",
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              }
+            },
+            "args": []
+          },
+          {
+            "name": "imdbID",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          }
+        ],
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "Node"
+          }
+        ]
+      },
+      {
+        "kind": "SCALAR",
+        "name": "String"
+      },
+      {
+        "kind": "SCALAR",
+        "name": "ID"
+      },
+      {
+        "kind": "OBJECT",
         "name": "Mutation",
         "fields": [
           {
@@ -58,10 +180,6 @@ const introspection = {
           }
         ],
         "interfaces": []
-      },
-      {
-        "kind": "SCALAR",
-        "name": "String"
       },
       {
         "kind": "INTERFACE",
@@ -84,13 +202,9 @@ const introspection = {
         "possibleTypes": [
           {
             "kind": "OBJECT",
-            "name": "Weather"
+            "name": "Movie"
           }
         ]
-      },
-      {
-        "kind": "SCALAR",
-        "name": "ID"
       },
       {
         "kind": "OBJECT",
@@ -105,6 +219,36 @@ const introspection = {
                 "name": "String",
                 "ofType": null
               }
+            },
+            "args": []
+          },
+          {
+            "name": "movie",
+            "type": {
+              "kind": "OBJECT",
+              "name": "Movie",
+              "ofType": null
+            },
+            "args": [
+              {
+                "name": "id",
+                "type": {
+                  "kind": "NON_NULL",
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "ID",
+                    "ofType": null
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "movies",
+            "type": {
+              "kind": "OBJECT",
+              "name": "QueryMoviesList",
+              "ofType": null
             },
             "args": []
           },
@@ -161,81 +305,44 @@ const introspection = {
                 }
               }
             ]
-          },
-          {
-            "name": "weather",
-            "type": {
-              "kind": "OBJECT",
-              "name": "Weather",
-              "ofType": null
-            },
-            "args": [
-              {
-                "name": "id",
-                "type": {
-                  "kind": "NON_NULL",
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "ID",
-                    "ofType": null
-                  }
-                }
-              }
-            ]
           }
         ],
         "interfaces": []
       },
       {
         "kind": "OBJECT",
-        "name": "Weather",
+        "name": "QueryMoviesList",
         "fields": [
           {
-            "name": "avatarUrl",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "args": []
-          },
-          {
-            "name": "firstName",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "args": []
-          },
-          {
-            "name": "id",
+            "name": "nodes",
             "type": {
               "kind": "NON_NULL",
               "ofType": {
-                "kind": "SCALAR",
-                "name": "ID",
-                "ofType": null
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Movie",
+                  "ofType": null
+                }
               }
             },
             "args": []
           },
           {
-            "name": "name",
+            "name": "totalCount",
             "type": {
               "kind": "SCALAR",
-              "name": "String",
+              "name": "Int",
               "ofType": null
             },
             "args": []
           }
         ],
-        "interfaces": [
-          {
-            "kind": "INTERFACE",
-            "name": "Node"
-          }
-        ]
+        "interfaces": []
+      },
+      {
+        "kind": "SCALAR",
+        "name": "Int"
       },
       {
         "kind": "SCALAR",

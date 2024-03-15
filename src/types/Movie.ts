@@ -6,6 +6,11 @@ interface Movie {
   imdbID: string
   Type: string
   Poster: string
+  Released: string
+  Genre: string
+  Director: string
+  Plot: string
+  Awards: string
 }
 
 // "Nodes" are the core abstraction of Fuse. Each node represents
@@ -22,6 +27,11 @@ export const MovieNode = node<Movie>({
     imdbID: t.exposeString("imdbID"),
     Type: t.exposeString("Type"),
     Poster: t.exposeString("Poster"),
+    Released: t.exposeString("Released"),
+    Genre: t.exposeString("Genre"),
+    Director: t.exposeString("Director"),
+    Plot: t.exposeString("Plot"),
+    Awards: t.exposeString("Awards"),
   }),
 })
 
