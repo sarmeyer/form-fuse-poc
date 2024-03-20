@@ -1,5 +1,5 @@
-import { node, addQueryFields } from "fuse"
-
+import { addQueryFields, node } from "fuse"
+// This is the type we expect from the API
 interface Movie {
   Title: string
   Year: string
@@ -22,16 +22,16 @@ export const MovieNode = node<Movie>({
   key: "imdbID",
   load: async ids => getMovieData(ids),
   fields: t => ({
-    Title: t.exposeString("Title"),
-    Year: t.exposeString("Year"),
+    title: t.exposeString("Title"),
+    year: t.exposeString("Year"),
     imdbID: t.exposeString("imdbID"),
-    Type: t.exposeString("Type"),
-    Poster: t.exposeString("Poster"),
-    Released: t.exposeString("Released"),
-    Genre: t.exposeString("Genre"),
-    Director: t.exposeString("Director"),
-    Plot: t.exposeString("Plot"),
-    Awards: t.exposeString("Awards"),
+    type: t.exposeString("Type"),
+    poster: t.exposeString("Poster"),
+    released: t.exposeString("Released"),
+    genre: t.exposeString("Genre"),
+    director: t.exposeString("Director"),
+    plot: t.exposeString("Plot"),
+    awards: t.exposeString("Awards"),
   }),
 })
 

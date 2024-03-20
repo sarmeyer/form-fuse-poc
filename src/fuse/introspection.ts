@@ -45,7 +45,7 @@ const introspection = {
         "name": "Movie",
         "fields": [
           {
-            "name": "Awards",
+            "name": "awards",
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -54,7 +54,7 @@ const introspection = {
             "args": []
           },
           {
-            "name": "Director",
+            "name": "director",
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -63,61 +63,7 @@ const introspection = {
             "args": []
           },
           {
-            "name": "Genre",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "args": []
-          },
-          {
-            "name": "Plot",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "args": []
-          },
-          {
-            "name": "Poster",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "args": []
-          },
-          {
-            "name": "Released",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "args": []
-          },
-          {
-            "name": "Title",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "args": []
-          },
-          {
-            "name": "Type",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "args": []
-          },
-          {
-            "name": "Year",
+            "name": "genre",
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -139,6 +85,60 @@ const introspection = {
           },
           {
             "name": "imdbID",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "plot",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "poster",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "released",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "title",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "type",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "args": []
+          },
+          {
+            "name": "year",
             "type": {
               "kind": "SCALAR",
               "name": "String",

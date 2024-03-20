@@ -11,11 +11,11 @@ export const MovieDetailsQuery = graphql(
       node(id: $id) {
         ... on Movie {
           ...MovieCard_MovieFields
-          Released
-          Genre
-          Director
-          Plot
-          Awards
+          released
+          genre
+          director
+          plot
+          awards
         }
       }
     }
@@ -31,8 +31,9 @@ export const MovieDetails = ({ id }: { id: string }) => {
 
   if (result.data?.node?.__typename !== "Movie") return null
 
-  const { Title, Director, Released, Genre, Plot, Awards, Poster } =
+  const { title, director, released, genre, plot, awards, poster } =
     result.data.node
+
   const router = useRouter()
 
   return (
@@ -44,16 +45,16 @@ export const MovieDetails = ({ id }: { id: string }) => {
         <section className="ml-auto mr-auto card card-normal w-[600px] bg-slate-500">
           <div className="card-body text-center">
             <figure>
-              <img src={Poster} alt="Movie Poster" className="pt-7" />
+              <img src={poster} alt="Movie Poster" className="pt-7" />
             </figure>
-            <h1 className="text-4xl font-bold">{Title}</h1>
+            <h1 className="text-4xl font-bold">{title}</h1>
             <div className="flex flex-col justify-center">
-              <h2 className="text-lg">{Director}</h2>
-              <p>{Released}</p>
-              <p>{Genre}</p>
-              <p className="italic">{Awards}</p>
+              <h2 className="text-lg">{director}</h2>
+              <p>{released}</p>
+              <p>{genre}</p>
+              <p className="italic">{awards}</p>
               <div className="divider divider-secondary" />
-              <p>{Plot}</p>
+              <p>{plot}</p>
             </div>
           </div>
         </section>
